@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 Item: #{item.itemName}
+    p Item Description: #{item.itemDescription}
+    p Category: #{item.category.categoryName}
+    p Available stocks: #{item.stockCount}
+    div(style='margin-left:20px;margin-top:20px')
+
+    hr
+    p
+        a(href=item.url+'/delete') Delete item  
+    p
+        a(href=item.url+'/update') Update item

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 Item: #{item.itemName}
+    p Item Description: #{item.itemDescription}
+    p Category: #{item.category.categoryName}
+    p Available stocks: #{item.stockCount}
+    div(style='margin-left:20px;margin-top:20px')
+
+    p Do you really want to delete this Item?
+
+    form(method='POST' action='')
+        div.form-group
+        input#itemId.form-control(type='hidden',name='itemId', required='true', value=item._id )
+
+        button.btn.btn-primary(type='submit') Delete
